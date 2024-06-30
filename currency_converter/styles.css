@@ -1,0 +1,150 @@
+body {
+    position: relative;
+    margin: 0;
+    padding: 15px;
+    background: #37474F;
+}
+
+.currency-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.amount,
+.currency-select {
+    flex-grow: 2;
+    margin-right: 8px;
+    padding: 8px;
+    border-radius: 4px;
+    background: #546E7A;
+    border: 1px solid #455A64;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    color: #ffffff;
+}
+
+.amount::placeholder {
+    color: #B0BEC5;
+    font-style: italic;
+}
+
+.currency-select {
+    flex-grow: 4;
+}
+
+.delete-currency, #addCurrency {
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: #546E7A;
+    border: 1px solid #455A64;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    color: #ffffff;
+}
+
+#addCurrency {
+    display: block;
+    width: 43px;
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.delete-currency:hover, #addCurrency:hover {
+    background-color: #455A64;
+    transform: translateY(-1px);
+}
+
+#currencyContainer {
+    margin-bottom: 16px;
+}
+
+.amount:focus, .currency-select:focus {
+    outline: none;
+    border: 2px solid #71f5e3;
+    box-shadow: 0 0 0 1px #71f5e3;
+}
+
+#theme-switcher-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: auto;
+}
+
+#theme-switcher {
+    position: relative;
+    width: 36px;
+    height: 18px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #ccc;
+    outline: none;
+    transition: background-color .4s;
+    border-radius: 18px;
+    margin: 0 8px;
+}
+
+#theme-switcher:checked {
+    background: #f589ee;
+}
+
+#theme-switcher:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+#theme-switcher:checked:before {
+    transform: translateX(18px);
+}
+
+#dark-mode-label, #light-mode-label {
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.light-mode {
+    background: #E6E6FA;
+    color: #333;
+}
+
+.light-mode .delete-currency:hover, .light-mode #addCurrency:hover {
+    background-color: #e3e3fc;
+    transform: translateY(-1px);
+}
+
+.light-mode .currency-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.light-mode .amount,
+.light-mode .currency-select,
+.light-mode .delete-currency,
+.light-mode #addCurrency {
+    background: #ffffff;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.light-mode .amount::placeholder {
+    color: #666;
+}
+
+.light-mode .amount:focus, .light-mode .currency-select:focus {
+    border: 2px solid #f589ee;
+    box-shadow: 0 0 0 1px #f589ee;
+}
